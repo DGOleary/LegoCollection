@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S6qf0QATxQ4ElEI+YOwhDNkPQGkObbcqas75DX5uZHE=",
+  "Hash": "XdDHdfrdFZKOSwYWnbewJod5lgBA5KrSZTfGYoGTef0=",
   "Source": "LegoCollection",
   "BasePath": "_content/LegoCollection",
   "Mode": "Default",
@@ -16,23 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\.gitignore",
-      "SourceId": "LegoCollection",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\",
-      "BasePath": "_content/LegoCollection",
-      "RelativePath": "lego-app/.gitignore",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lego-app\\.gitignore"
-    },
     {
       "Identity": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\package.json",
       "SourceId": "LegoCollection",

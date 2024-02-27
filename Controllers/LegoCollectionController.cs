@@ -4,6 +4,7 @@ using System.Data;
 using System.Net.Http;
 using System.Data.SqlClient;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace LegoCollection.Controllers 
 {
@@ -17,15 +18,61 @@ namespace LegoCollection.Controllers
         { 
             _configuration = configuration;
         }
-        /*
+
         [HttpGet]
-        [Route("api/GetSet")]
+        [Route("GetSets")]
         public JsonResult GetSets()
         {
-            SqlConnection
-            return null;
+            var headers = Request.Headers;
+
+            List<Dictionary<string, object>> results = new List<Dictionary<string, object>>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("LegoColCon").ToString()))
+                {
+                    connection.Open();
+
+                    string query = "SELECT set_num, set_name, set_count, set_complete, set_notes FROM col.sets WHERE set_user_id = @UserId";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        Console.WriteLine(headers["UserID"]);
+                        //sets value to a string so AddWithValue knows what to send it to the database as
+                        string uid = headers["UserID"];
+                        command.Parameters.AddWithValue("@UserId", uid);
+                        Console.WriteLine(command.CommandText);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Dictionary<string, object> row = new Dictionary<string, object>();
+
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[reader.GetName(i)] = reader[i];
+                                }
+
+                                results.Add(row);
+                            }
+                        }
+                    }
+                }
+                string ret = JsonConvert.SerializeObject(results, Formatting.Indented);
+                Console.WriteLine(ret);
+
+                var jsonResult = new JsonResult(results);
+                jsonResult.StatusCode = 200;
+                return jsonResult;
+            }
+            catch (Exception ex) {
+
+                return new JsonResult(new { error = "Error when accessing data" })
+                {
+                    StatusCode = 400
+                };
+            }
         }
-        */
 
         //handles requests to upload set from the client
         [HttpPost("UploadSet")]
