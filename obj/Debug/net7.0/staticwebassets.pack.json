@@ -1,0 +1,105 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\LegoCollection.css",
+      "PackagePath": "staticwebassets\\LegoCollection.css"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\LegoCollection.html",
+      "PackagePath": "staticwebassets\\LegoCollection.html"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\LegoCollection.js",
+      "PackagePath": "staticwebassets\\LegoCollection.js"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\.gitignore",
+      "PackagePath": "staticwebassets\\lego-app\\.gitignore"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\README.md",
+      "PackagePath": "staticwebassets\\lego-app\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\package-lock.json",
+      "PackagePath": "staticwebassets\\lego-app\\package-lock.json"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\package.json",
+      "PackagePath": "staticwebassets\\lego-app\\package.json"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\public\\favicon.ico",
+      "PackagePath": "staticwebassets\\lego-app\\public\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\public\\index.html",
+      "PackagePath": "staticwebassets\\lego-app\\public\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\public\\logo192.png",
+      "PackagePath": "staticwebassets\\lego-app\\public\\logo192.png"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\public\\logo512.png",
+      "PackagePath": "staticwebassets\\lego-app\\public\\logo512.png"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\public\\manifest.json",
+      "PackagePath": "staticwebassets\\lego-app\\public\\manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\public\\robots.txt",
+      "PackagePath": "staticwebassets\\lego-app\\public\\robots.txt"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\src\\App.css",
+      "PackagePath": "staticwebassets\\lego-app\\src\\App.css"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\src\\App.js",
+      "PackagePath": "staticwebassets\\lego-app\\src\\App.js"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\src\\App.test.js",
+      "PackagePath": "staticwebassets\\lego-app\\src\\App.test.js"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\src\\index.css",
+      "PackagePath": "staticwebassets\\lego-app\\src\\index.css"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\src\\index.js",
+      "PackagePath": "staticwebassets\\lego-app\\src\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\src\\logo.svg",
+      "PackagePath": "staticwebassets\\lego-app\\src\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\src\\reportWebVitals.js",
+      "PackagePath": "staticwebassets\\lego-app\\src\\reportWebVitals.js"
+    },
+    {
+      "Id": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\src\\setupTests.js",
+      "PackagePath": "staticwebassets\\lego-app\\src\\setupTests.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.LegoCollection.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.LegoCollection.props",
+      "PackagePath": "build\\LegoCollection.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.LegoCollection.props",
+      "PackagePath": "buildMultiTargeting\\LegoCollection.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.LegoCollection.props",
+      "PackagePath": "buildTransitive\\LegoCollection.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
