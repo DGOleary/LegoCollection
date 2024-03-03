@@ -40,7 +40,6 @@ namespace LegoCollection.Controllers
                         //sets value to a string so AddWithValue knows what to send it to the database as
                         string uid = headers["UserID"];
                         command.Parameters.AddWithValue("@UserId", uid);
-                        Console.WriteLine(command.CommandText);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
