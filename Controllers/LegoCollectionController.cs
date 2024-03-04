@@ -118,7 +118,7 @@ namespace LegoCollection.Controllers
                 http.DefaultRequestHeaders.Add("Authorization", "key " + key);
                 try
                 {
-                    HttpResponseMessage response = await http.GetAsync("https://rebrickable.com/api/v3/lego/sets/?search=" + query);
+                    HttpResponseMessage response = await http.GetAsync("https://rebrickable.com/api/v3/lego/sets/" + query);
 
                     if (response.IsSuccessStatusCode)
                     {

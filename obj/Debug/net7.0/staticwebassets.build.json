@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XdDHdfrdFZKOSwYWnbewJod5lgBA5KrSZTfGYoGTef0=",
+  "Hash": "YSAxTmMC9/+vddWrwtuliHbhvZYvhlJzWlXLsILLBWs=",
   "Source": "LegoCollection",
   "BasePath": "_content/LegoCollection",
   "Mode": "Default",
@@ -151,23 +151,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lego-app\\public\\robots.txt"
-    },
-    {
-      "Identity": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\README.md",
-      "SourceId": "LegoCollection",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\",
-      "BasePath": "_content/LegoCollection",
-      "RelativePath": "lego-app/README.md",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lego-app\\README.md"
     },
     {
       "Identity": "C:\\Users\\Mango T. Shih-tzu\\Desktop\\Projects\\SQL\\Lego Collection\\WebApp\\LegoCollection\\wwwroot\\lego-app\\src\\App.css",

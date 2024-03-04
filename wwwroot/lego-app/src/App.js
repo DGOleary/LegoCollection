@@ -12,6 +12,8 @@ function App() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchList, setSearchList] = useState([]);
   const [setList, setSetList] = useState({});
+  //keeps track of what page the search is on
+  let page=1;
 
   //url of the localhost server
   const serverUrl = "https://localhost:7024/api/LegoCollection/";
@@ -19,7 +21,6 @@ function App() {
   //handles the input to a text box and takes in the set function for the value that is updated
   const handleTextInput = (event, setFunc) => {
     setFunc(event.target.value);
-    console.log(setName);
   }
 
   //handles the complete checkbox
@@ -32,25 +33,47 @@ function App() {
      setSetList(prevState => ({
       ...prevState,
       [setData.set_num]:setData, 
-     }))
+     }));
+  }
+
+  //gets a users sets from the database and adds them to the list
+  const setSearchResults = (searchData) =>{
+    setSearchList(prevState =>[...prevState, ...searchData]);
+ }
+
+  //adds search results to list
+  const addSearchResults = (data) => {
+    setSearchResults(data);
   }
 
   //gets search data from a url
   const search = async (url) =>{
-    var ret = await fetch(url,{
+    let ret = await fetch(url,{
         method: "GET",
         headers:{
             "Content-Type": "application/json"
-        }});
-          return await ret.json();
+        }}).then(response => {
+          return response.json();
+        }).then(data => {
+          addSearchResults(data["results"]);
+          if(data["next"]!=null){
+            page++;
+            //TODO fix this later so the server accepts it better
+            search(serverUrl+"SearchSet/%3Fpage%3D"+page+"&search%3D"+searchVal);
+          }
+        });
     }
 
     //handles pages of searches and puts them in the dropdown
     const getSearches = async () =>{
-      let searchEntry = searchVal;
-      let data= await search(serverUrl+"SearchSet/"+searchEntry);
-      console.log(data);
-
+      //reset list to empty when performing a new search
+      setSearchList([]);
+      page=1;
+      await search(serverUrl+"SearchSet/%3Fsearch%3D"+searchVal);
+      console.log();
+      console.log("Final list:");
+      console.log(searchList);
+      console.log();
     }
 
     //gets a users sets from the database
@@ -66,6 +89,7 @@ function App() {
         return response.json();
       }).then(json =>{
         for(let key in json){
+          console.log(json[key])
           setUserSets(json[key]);
         }
       });
@@ -74,14 +98,13 @@ function App() {
 
 //posts the set to the database
 const setEnter = () =>{
-  let num = setNum;
   let user = "1";
   let set = {
-      set_num: num,
-      set_name: "",
-      set_count: 0,
-      set_complete: false,
-      set_notes: "",
+      set_num: setNum,
+      set_name: setName,
+      set_count: setCount,
+      set_complete: setComplete,
+      set_notes: setNotes,
       set_user_id: user,
       nfc_id: ""
   }
@@ -93,6 +116,11 @@ const setEnter = () =>{
           "Content-Type": "application/json"
       }}).then(response => {
           console.log(response.status);
+          setSetNum("");
+          setSetComplete(false);
+          setSetCount(0);
+          setSetNotes("");
+          setSetName("");
       });
 }
 
@@ -101,10 +129,15 @@ const setEnter = () =>{
       <div className="inputs">
       <input type="text" value={searchVal} onChange={(event) => handleTextInput(event,setSearchVal)}></input>
       <button onClick={getSearches}>Enter Search</button>
+      Set Number:
       <input type="text" value={setNum} onChange={(event) => handleTextInput(event,setSetNum)}></input>
+      Set Name:
       <input type="text" value={setName} onChange={(event) => handleTextInput(event,setSetName)}></input>
+      How many copies?
       <input type="number" value={setCount} onChange={(event) => handleTextInput(event,setSetCount)}></input>
+      Is it complete?
       <input type="checkbox" value={setName} onChange={handleComplete}></input>
+      Notes:
       <input type="textarea" value={setNotes} onChange={(event) => handleTextInput(event,setSetNotes)}></input>
       <button onClick={setEnter}>Add Set</button>
       <button onClick={getSets}>Get Sets</button>
@@ -125,7 +158,7 @@ const setEnter = () =>{
           <td>{item.set_name} </td>
           <td>{setNum} </td>
           <td>{item.set_count} </td>
-          <td>{item.set_complete} </td>
+          <td>{item.set_complete.toString()} </td>
           <td>{item.set_notes}</td>
         </tr>
       ))}
