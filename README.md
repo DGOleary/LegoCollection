@@ -12,5 +12,7 @@ The data fields populated with the set's details
 ![image](https://github.com/DGOleary/LegoCollection/assets/106465138/8104eae1-6348-41c8-8e54-26de148425c4)
 The table of a user's sets returned from the server
 
+This project uses the Rebrickable API for their database of Lego sets and other elements
+
 The client is built with React, and the server is built with .NET and C#
 
