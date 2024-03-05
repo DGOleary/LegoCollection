@@ -41,10 +41,22 @@ function App() {
     setSearchList(prevState =>[...prevState, ...searchData]);
  }
 
+ const enterSearchResult = (result) =>{
+  setSetNum(result.set_num);
+  setSetName(result.name);
+  setShowDropdown(false);
+ }
+
   //adds search results to list
   const addSearchResults = (data) => {
     setSearchResults(data);
   }
+
+  useEffect(() =>{
+    document.addEventListener("click", () => {
+      setShowDropdown(false);
+    });
+  },[]);
 
   //gets search data from a url
   const search = async (url) =>{
@@ -74,6 +86,7 @@ function App() {
       console.log("Final list:");
       console.log(searchList);
       console.log();
+      setShowDropdown(true);
     }
 
     //gets a users sets from the database
@@ -94,7 +107,6 @@ function App() {
         }
       });
     }
-
 
 //posts the set to the database
 const setEnter = () =>{
@@ -129,6 +141,13 @@ const setEnter = () =>{
       <div className="inputs">
       <input type="text" value={searchVal} onChange={(event) => handleTextInput(event,setSearchVal)}></input>
       <button onClick={getSearches}>Enter Search</button>
+      {showDropdown && (
+      <div className="searchDropdown">
+        {searchList.map((result, index) =>
+        <div key={index} onClick={() => enterSearchResult(result)}>{result.name}</div>
+        )}
+      </div>
+    )}
       Set Number:
       <input type="text" value={setNum} onChange={(event) => handleTextInput(event,setSetNum)}></input>
       Set Name:
@@ -137,7 +156,6 @@ const setEnter = () =>{
       <input type="number" value={setCount} onChange={(event) => handleTextInput(event,setSetCount)}></input>
       Is it complete?
       <input type="checkbox" value={setName} onChange={handleComplete}></input>
-      Notes:
       <input type="textarea" value={setNotes} onChange={(event) => handleTextInput(event,setSetNotes)}></input>
       <button onClick={setEnter}>Add Set</button>
       <button onClick={getSets}>Get Sets</button>
@@ -164,12 +182,6 @@ const setEnter = () =>{
       ))}
       </tbody>
     </table>)}
-
-    {showDropdown && (
-      <div className="searchDropdown">
-        
-      </div>
-    )}
     </div>
   );
 }
