@@ -12,8 +12,10 @@ function App() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchList, setSearchList] = useState([]);
   const [setList, setSetList] = useState({});
+  const [isChecked, setChecked] = useState(false);
   //keeps track of what page the search is on
   let page=1;
+
 
   //url of the localhost server
   const serverUrl = "https://localhost:7024/api/LegoCollection/";
@@ -25,6 +27,7 @@ function App() {
 
   //handles the complete checkbox
   const handleComplete = () =>{
+    setChecked(!isChecked);
     setSetComplete(!setComplete);
   }
 
@@ -130,6 +133,7 @@ const setEnter = () =>{
           console.log(response.status);
           setSetNum("");
           setSetComplete(false);
+          setChecked(false);
           setSetCount(0);
           setSetNotes("");
           setSetName("");
@@ -155,7 +159,7 @@ const setEnter = () =>{
       How many copies?
       <input type="number" value={setCount} onChange={(event) => handleTextInput(event,setSetCount)}></input>
       Is it complete?
-      <input type="checkbox" value={setName} onChange={handleComplete}></input>
+      <input type="checkbox" value={setName} checked={isChecked} onChange={handleComplete}></input>
       <input type="textarea" value={setNotes} onChange={(event) => handleTextInput(event,setSetNotes)}></input>
       <button onClick={setEnter}>Add Set</button>
       <button onClick={getSets}>Get Sets</button>
